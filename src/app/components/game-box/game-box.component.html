@@ -1,0 +1,7 @@
+<div>
+  <h3>{{ name }}</h3>
+  <div>
+    <img [src]="coverUrl" alt="">
+  </div>
+  <button [routerLink]="['/gameview',gameID]" [queryParams]="{ id: gameID}">view game</button>
+</div>

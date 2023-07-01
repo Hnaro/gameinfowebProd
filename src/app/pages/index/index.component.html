@@ -1,0 +1,7 @@
+<h1>Games</h1>
+<div>
+  <app-game-box *ngFor=" let games of gamesSearchResults"
+  [gameID]="games.id"
+  [name]="games.name"
+  [coverID]="games.cover"></app-game-box>
+</div>
