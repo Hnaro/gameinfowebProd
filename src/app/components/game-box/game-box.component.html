@@ -1,6 +1,6 @@
 <div>
   <div [routerLink]="['/gameview',gameID]" [queryParams]="{ id: gameID}" >
     <h3>{{ name }}</h3>
-    <img [src]="coverUrl" alt="">
+    <img [src]="coverUrl" loading="lazy" alt="">
   </div>
 </div>

@@ -8,6 +8,7 @@ import { WebBackendService } from '../../services/web-backend.service';
 })
 export class IndexComponent implements OnInit {
   gamesSearchResults: any;
+  searchedResults: boolean = false;
   constructor(private clientAPI: WebBackendService) {
     this.gamesSearchResults = [];
   }

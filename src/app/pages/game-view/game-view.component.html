@@ -1,6 +1,8 @@
 
 <h1>{{ name }}</h1>
-<div><img [src]="coverUrl" alt="" srcset=""></div>
+<div><img [src]="coverUrl" loading="lazy" alt="" srcset=""></div>
+<h5>Summary: </h5>
+<p>{{ description }}</p>
 <h5>Genres:</h5>
 <p *ngFor=" let genrename of genreNames">
     {{genrename.name}}

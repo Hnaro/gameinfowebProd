@@ -13,54 +13,61 @@ export class GameViewComponent implements OnInit {
   name: any;
   coverUrl: string = "";
   platformNames: any[] = [];
+  description: any;
   websites: any[] = [];
 
   genreNames: any[] = [];
   constructor(private route: ActivatedRoute,private clientAPI: WebBackendService){}
-  ngOnInit(): void {
-    this.route.queryParamMap.subscribe(value => {
-      this.id = value.get("id");
-    });
-    // request more info here
+  
+  async setUpGameViewData() {
+        // request more info here
     // get gameinfo
-    this.clientAPI.getsingleGameInfo(this.id)
-    .then(body => {
-      body.subscribe(body => {
-        let results = Object.values(body);
+    await this.clientAPI.getsingleGameInfo(this.id)
+    .then(async (body) => {
+      await body.subscribe( async (body) => {
+        let results = await Object.values(body);
         console.log(results[0]);
         this.genreIDs = results[0].genres;
         this.name = results[0].name;
+        this.description = results[0].summary;
         // get genre names
-        this.clientAPI.getGenreNames(this.genreIDs)
-        .then(data => {
-          data.subscribe(value => {
-            this.genreNames = Object.values(value);
+        await this.clientAPI.getGenreNames(this.genreIDs)
+        .then( async (data) => {
+          await data.subscribe(async (value) => {
+            this.genreNames = await Object.values(value);
             //console.log(this.genreNames.length);
           })
         })
         //get cover 
-        this.clientAPI.getGameCover(this.id)
-        .then(data => {
-          data.subscribe(value => {
-            this.coverUrl = Object.values(value)[0].url;
+        await this.clientAPI.getGameCover(this.id)
+        .then( async (data) => {
+          await data.subscribe(async (value) => {
+            this.coverUrl = await Object.values(value)[0].url;
           })
         })
         // get platforms name
-        this.clientAPI.getPlatformNames(results[0].platforms)
-        .then(data => {
-          data.subscribe(value => {
-            this.platformNames = Object.values(value);
+        await this.clientAPI.getPlatformNames(results[0].platforms)
+        .then(async (data) => {
+          await data.subscribe( async (value) => {
+            this.platformNames = await Object.values(value);
           })
         })
         // get website names
-        this.clientAPI.getsingleGameWebsites(this.id)
-        .then(data => {
-          data.subscribe(value => {
-            this.websites = Object.values(value);
+        await this.clientAPI.getsingleGameWebsites(this.id)
+        .then(async (data) => {
+          await data.subscribe( async (value) => {
+            this.websites = await Object.values(value);
             console.log(this.websites);
           })
         })
       })
     })
+  }
+
+  ngOnInit(): void {
+    this.route.queryParamMap.subscribe(value => {
+      this.id = value.get("id");
+    });
+    this.setUpGameViewData();
   }
 }
