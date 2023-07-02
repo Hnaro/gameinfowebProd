@@ -1,0 +1,8 @@
+<button (click)="showSelections()">Genres<!-- put svg image here --></button>
+<button (click)="filterSearch()">Filter</button>
+<div  *ngIf="isSelectionActive">
+    <div *ngFor=" let genre of genres; let i = index">
+        <label for={{genre.name}}>{{genre.name}}</label>
+        <input [checked]="" (click)="selectID(genre.id)" type="checkbox" name={{genre.name}} id="">
+    </div>
+</div>
