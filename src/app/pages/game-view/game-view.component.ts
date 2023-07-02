@@ -68,6 +68,8 @@ export class GameViewComponent implements OnInit {
     this.route.queryParamMap.subscribe(value => {
       this.id = value.get("id");
     });
-    this.setUpGameViewData();
+    setTimeout(() => {
+      this.setUpGameViewData();
+    },1000);
   }
 }

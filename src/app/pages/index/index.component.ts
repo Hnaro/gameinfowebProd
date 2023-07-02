@@ -14,11 +14,13 @@ export class IndexComponent implements OnInit {
   }
   ngOnInit(): void {
     let gameresults: any;
-    let results = this.clientAPI.getData().then(value => {
-      value.subscribe(value => {
-        this.gamesSearchResults = Object.values(value);
-        console.log(this.gamesSearchResults)
+    setTimeout(() => {
+      let results = this.clientAPI.getData().then(value => {
+        value.subscribe(value => {
+          this.gamesSearchResults = Object.values(value);
+          console.log(this.gamesSearchResults)
+        })
       })
-    })
+    }, 500);
   }
 }

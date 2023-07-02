@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { timeout } from 'rxjs';
 import { WebBackendService } from 'src/app/services/web-backend.service';
 
 @Component({
@@ -26,7 +27,9 @@ export class GameBoxComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.setupData();
+    setTimeout(() => {
+      this.setupData();
+    }, 1000)
   }
 
 }
