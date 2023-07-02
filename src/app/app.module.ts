@@ -8,13 +8,15 @@ import { WebBackendService } from './services/web-backend.service';
 import { GameBoxComponent } from './components/game-box/game-box.component';
 import { IndexComponent } from './pages/index/index.component';
 import { GameViewComponent } from './pages/game-view/game-view.component';
+import { SearchBarComponent } from './component/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameBoxComponent,
     IndexComponent,
-    GameViewComponent
+    GameViewComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

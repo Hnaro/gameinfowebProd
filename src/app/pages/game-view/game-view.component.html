@@ -1,1 +1,16 @@
-<p>{{id}}</p>
+
+<h1>{{ name }}</h1>
+<div><img [src]="coverUrl" alt="" srcset=""></div>
+<h5>Genres:</h5>
+<p *ngFor=" let genrename of genreNames">
+    {{genrename.name}}
+</p>
+<h5>Platforms:</h5>
+<p *ngFor=" let platformname of platformNames">
+    {{platformname.name}}
+</p>
+<h5>Websites:</h5>
+<p *ngFor=" let website of websites">
+    <a href={{website.url}}>{{website.url}}
+    </a>
+</p>

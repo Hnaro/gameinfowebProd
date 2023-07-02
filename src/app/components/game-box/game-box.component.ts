@@ -18,7 +18,7 @@ export class GameBoxComponent implements OnInit {
 
   async setupData() {
     let results: any;
-     await this.clientAPI.getGameCover(this.coverID).then(data => {
+     await this.clientAPI.getGameCover(this.gameID).then(data => {
       data.subscribe(value => {
         this.coverUrl = Object.values(value)[0].url;
       })
