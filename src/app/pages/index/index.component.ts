@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { WebBackendService } from '../../services/web-backend.service';
+import { SearchService } from 'src/app/services/search.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -8,19 +10,31 @@ import { WebBackendService } from '../../services/web-backend.service';
 })
 export class IndexComponent implements OnInit {
   gamesSearchResults: any;
-  searchedResults: boolean = false;
-  constructor(private clientAPI: WebBackendService) {
+  nameSearched: any;
+  constructor(private clientAPI: WebBackendService, 
+    private route: ActivatedRoute) {
     this.gamesSearchResults = [];
   }
   ngOnInit(): void {
     let gameresults: any;
-    setTimeout(() => {
-      let results = this.clientAPI.getData().then(value => {
-        value.subscribe(value => {
-          this.gamesSearchResults = Object.values(value);
-          console.log(this.gamesSearchResults)
-        })
+    this.nameSearched = "Martian";
+    this.clientAPI.getData().then(value => {
+      value.subscribe(value => {
+        this.gamesSearchResults = Object.values(value);
+        console.log(this.gamesSearchResults)
       })
+    })
+    setTimeout(() => {
+
     }, 500);
+  }
+
+  async handleGameSearch(e: any) {
+    await this.clientAPI.searchByName(e)
+    .then(data => {
+      data.subscribe(value => {
+        this.gamesSearchResults = Object.values(value);
+      })
+    })
   }
 }

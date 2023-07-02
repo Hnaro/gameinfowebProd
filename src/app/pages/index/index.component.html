@@ -1,5 +1,5 @@
 <h1>Games</h1>
-<app-search-bar></app-search-bar>
+<app-search-bar (sendsearchName)="handleGameSearch($event)"  ></app-search-bar>
 <div>
   <app-game-box *ngFor=" let games of gamesSearchResults"
   [gameID]="games.id"
