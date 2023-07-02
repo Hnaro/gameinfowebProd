@@ -13,6 +13,9 @@ export class WebBackendService {
   async getData() {
     return await this.http.get(this.defaultGetDataUrl);
   }
+  async getAllGenreNames() {
+    return await this.http.get(this.defaultURL+"/allGenres");
+  }
   async searchByName(name: string) {
     return await this.http.post(this.defaultURL+"/nameSearch", { name: name},);
   }

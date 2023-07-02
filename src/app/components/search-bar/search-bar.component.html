@@ -1,8 +1,9 @@
 <div id="searchBar-divContainer">
-    <select name="" id="">
-        <option value="test">test name</option>
-    </select>
-    <button>Filter</button>
-    <input type="text" [(ngModel)]="name" placeholder="Search a name...">
-    <button (click)="onClick()">Search</button>
+    <div id="searchBynameSection-divContainer">
+        <div>
+            <input type="text" [(ngModel)]="name" placeholder="Search a name...">
+        </div>
+        <div *ngIf="noInput && !name"  [class.error-style]="true" #err  >{{ errMsg }}</div>
+        <button (click)="onClick()">Search</button>
+    </div>
 </div>

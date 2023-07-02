@@ -4,12 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SearchService {
-  searchedName: string = "";
-  constructor() {}
-  set setName(name: string) {
-    this.searchedName = name;
+  #searchedGenres: any;
+  constructor() {
   }
-  get getName(): string {
-    return this.searchedName;
+  set setSearchedGenres(searchedgenres: any) {
+    this.#searchedGenres = searchedgenres;
+  }
+  get getSearchedGenres(): any {
+    return this.#searchedGenres;
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { SearchService } from 'src/app/services/search.service';
 import { WebBackendService } from 'src/app/services/web-backend.service';
 
 @Component({
@@ -8,15 +9,21 @@ import { WebBackendService } from 'src/app/services/web-backend.service';
 })
 export class SearchBarComponent implements OnInit {
   @Output() sendsearchName = new EventEmitter();
-  @Output() sendSearchGenre = new EventEmitter();
-  name: string = "";
-  genreSearch: number[] = [];
-  constructor(private clientAPI: WebBackendService) {}
-  ngOnInit(): void {}
+  noInput: boolean = false;
 
+  name: string = "";
+  errMsg: string = "Please enter a name...";
+  constructor(private clientAPI: WebBackendService, private searchService:SearchService) {
+    //searchService.setName = [1,4,8,16];
+  }
+  ngOnInit(): void {}
   onClick() {
-    this.sendsearchName.emit(this.name);
+    if (this.name) {
+      this.sendsearchName.emit(this.name);
+      this.noInput = false;
+    }else { 
+      this.noInput = true;
+    }
     // click send data that should trigger the search game
-    console.log("test");
   }
 }

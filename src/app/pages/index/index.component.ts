@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { WebBackendService } from '../../services/web-backend.service';
 import { SearchService } from 'src/app/services/search.service';
 import { ActivatedRoute } from '@angular/router';
@@ -11,29 +11,46 @@ import { ActivatedRoute } from '@angular/router';
 export class IndexComponent implements OnInit {
   gamesSearchResults: any;
   nameSearched: any;
+  //genreSearchResults: any[];
+  // list of genreIDs for searching
+  genreSelectedIDs: any[] = [];
   constructor(private clientAPI: WebBackendService, 
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute, private searchService: SearchService) {
     this.gamesSearchResults = [];
+    //searchService.setSearchedGenres = [{id: 1, name:"test1"},{id: 2, name:"test2"}]
   }
   ngOnInit(): void {
-    let gameresults: any;
-    this.nameSearched = "Martian";
-    this.clientAPI.getData().then(value => {
-      value.subscribe(value => {
-        this.gamesSearchResults = Object.values(value);
-        console.log(this.gamesSearchResults)
+    this.setUpData();
+  }
+  async setUpData() {
+    setTimeout(async () => {
+      let gameresults: any;
+      this.nameSearched = "Martian";
+      await this.clientAPI.getData().then(value => {
+        let subscribedData = value.subscribe(value => {
+          this.gamesSearchResults = Object.values(value);
+          // unsubscribed to data when collected
+          if (this.gamesSearchResults) {
+            subscribedData.unsubscribe();
+          }
+        })
       })
-    })
-    setTimeout(() => {
-
     }, 500);
   }
-
+  async handleSelectedIDs(e: any) {
+    console.log(e)
+  }
+  async handleSearchByGenre(e: any) {
+    //await this.clientAPI.
+  }
   async handleGameSearch(e: any) {
     await this.clientAPI.searchByName(e)
     .then(data => {
-      data.subscribe(value => {
+      let subs = data.subscribe(value => {
         this.gamesSearchResults = Object.values(value);
+        if(this.gamesSearchResults) {
+          subs.unsubscribe();
+        }
       })
     })
   }
