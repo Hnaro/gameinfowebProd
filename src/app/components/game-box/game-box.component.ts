@@ -14,14 +14,19 @@ export class GameBoxComponent implements OnInit {
   @Input() coverID: number = 0;
 
   genreIDs: number[] = [];
-  coverUrl: any = "";
+  coverUrl: any;
+  cover: any;
   constructor(private clientAPI: WebBackendService) {}
 
   async setupData() {
     let results: any;
      await this.clientAPI.getGameCover(this.gameID).then(data => {
-      data.subscribe(value => {
-        this.coverUrl = Object.values(value)[0].url;
+      let subs = data.subscribe(value => {
+        this.cover = Object.values(value)[0];
+        this.coverUrl = this.cover?.url;
+        if (this.cover) {
+          subs.unsubscribe();
+        }
       })
     })
   }

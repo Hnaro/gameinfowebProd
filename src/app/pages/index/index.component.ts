@@ -28,7 +28,7 @@ export class IndexComponent implements OnInit {
       this.nameSearched = "Martian";
       await this.clientAPI.getData().then(value => {
         let subscribedData = value.subscribe(value => {
-          this.gamesSearchResults = Object.values(value);
+          this.gamesSearchResults = value;
           // unsubscribed to data when collected
           if (this.gamesSearchResults) {
             subscribedData.unsubscribe();
@@ -37,17 +37,22 @@ export class IndexComponent implements OnInit {
       })
     }, 500);
   }
-  async handleSelectedIDs(e: any) {
-    console.log(e)
-  }
   async handleSearchByGenre(e: any) {
-    //await this.clientAPI.
+    await this.clientAPI.searchByGenres(e)
+    .then(data => {
+      let subs = data.subscribe(value => {
+        this.gamesSearchResults = value;
+        if (this.gamesSearchResults) {
+          subs.unsubscribe();
+        }
+      })
+    })
   }
   async handleGameSearch(e: any) {
     await this.clientAPI.searchByName(e)
     .then(data => {
       let subs = data.subscribe(value => {
-        this.gamesSearchResults = Object.values(value);
+        this.gamesSearchResults = value;
         if(this.gamesSearchResults) {
           subs.unsubscribe();
         }

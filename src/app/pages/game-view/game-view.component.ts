@@ -24,52 +24,72 @@ export class GameViewComponent implements OnInit {
     // get gameinfo
     await this.clientAPI.getsingleGameInfo(this.id)
     .then(async (body) => {
-      await body.subscribe( async (body) => {
-        let results = await Object.values(body);
-        console.log(results[0]);
+      let bodysubs = await body.subscribe( async (body) => {
+        let results = Object.values(body);
+        //console.log(results[0]);
         this.genreIDs = results[0].genres;
         this.name = results[0].name;
         this.description = results[0].summary;
         // get genre names
         await this.clientAPI.getGenreNames(this.genreIDs)
         .then( async (data) => {
-          await data.subscribe(async (value) => {
-            this.genreNames = await Object.values(value);
+          let subs = data.subscribe(async (value) => {
+            this.genreNames = Object.values(value);
             //console.log(this.genreNames.length);
+            if (this.genreNames) {
+              subs.unsubscribe();
+            }
           })
         })
         //get cover 
         await this.clientAPI.getGameCover(this.id)
         .then( async (data) => {
-          await data.subscribe(async (value) => {
-            this.coverUrl = await Object.values(value)[0].url;
+          let subs = await data.subscribe((value) => {
+            let cover: any;
+            cover = Object.values(value)![0];
+            this.coverUrl = cover.url;
+            if (cover) {
+              subs.unsubscribe();
+            }
           })
         })
         // get platforms name
         await this.clientAPI.getPlatformNames(results[0].platforms)
         .then(async (data) => {
-          await data.subscribe( async (value) => {
+          let subs = await data.subscribe( async (value) => {
             this.platformNames = await Object.values(value);
+            if(this.platformNames) {
+              subs.unsubscribe();
+            }
           })
         })
         // get website names
         await this.clientAPI.getsingleGameWebsites(this.id)
         .then(async (data) => {
-          await data.subscribe( async (value) => {
+          let subs = await data.subscribe( async (value) => {
             this.websites = await Object.values(value);
-            console.log(this.websites);
+            if (this.websites) {
+              subs.unsubscribe();
+            }
           })
         })
+
+        if(results) {
+          bodysubs.unsubscribe();
+        }
       })
     })
   }
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe(value => {
+    let subs = this.route.queryParamMap.subscribe(value => {
       this.id = value.get("id");
+      if (this.id) {
+        subs.unsubscribe();
+      }
     });
     setTimeout( async () => {
       await this.setUpGameViewData();
-    },1000);
+    },500);
   }
 }

@@ -45,12 +45,16 @@ export class SelectionComponent implements OnInit {
     this.selectedids = [];
     this.isSelectionActive = false;
   }
+  isChecked(id: number) {
+    return this.selectedids.filter(value => {
+      return  value === id;
+    })
+  }
   showSelections() {
     if (this.isSelectionActive) {
       // emit data here
       // get selected ids
       // if id is selected
-      //console.log(this.selectedids);
       this.isSelectionActive = false;
       return;
     }

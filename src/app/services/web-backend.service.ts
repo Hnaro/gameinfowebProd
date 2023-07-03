@@ -22,6 +22,9 @@ export class WebBackendService {
   async searchByGenre(genreId: number) {
     return await this.http.post(this.defaultURL+"/genre", { genreId: genreId });
   }
+  async searchByGenres(genreIds: number) {
+    return await this.http.post(this.defaultURL+"/genresSearch", { genreids: genreIds });
+  }
   async getGameCover(gameID: number) {
     return await this.http.post(this.defaultURL+"/gameCovers", { gameid: gameID });
   }
