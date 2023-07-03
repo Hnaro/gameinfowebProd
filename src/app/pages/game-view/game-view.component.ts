@@ -18,8 +18,12 @@ export class GameViewComponent implements OnInit {
 
   genreNames: any[] = [];
   constructor(private route: ActivatedRoute,private clientAPI: WebBackendService){}
-  
+
   async setUpGameViewData() {
+    let querySubs = await this.route.queryParamMap.subscribe(value => {
+      this.id = value.get("id");
+    });
+    querySubs.unsubscribe();
         // request more info here
     // get gameinfo
     await this.clientAPI.getsingleGameInfo(this.id)
@@ -41,7 +45,7 @@ export class GameViewComponent implements OnInit {
             }
           })
         })
-        //get cover 
+        //get cover
         await this.clientAPI.getGameCover(this.id)
         .then( async (data) => {
           let subs = await data.subscribe((value) => {
@@ -82,12 +86,6 @@ export class GameViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let subs = this.route.queryParamMap.subscribe(value => {
-      this.id = value.get("id");
-      if (this.id) {
-        subs.unsubscribe();
-      }
-    });
     setTimeout( async () => {
       await this.setUpGameViewData();
     },500);
