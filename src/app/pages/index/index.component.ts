@@ -14,7 +14,7 @@ export class IndexComponent implements OnInit {
   //genreSearchResults: any[];
   // list of genreIDs for searching
   genreSelectedIDs: any[] = [];
-  constructor(private clientAPI: WebBackendService, 
+  constructor(private clientAPI: WebBackendService,
     private route: ActivatedRoute, private searchService: SearchService) {
     this.gamesSearchResults = [];
     //searchService.setSearchedGenres = [{id: 1, name:"test1"},{id: 2, name:"test2"}]
