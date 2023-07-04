@@ -28,7 +28,7 @@ export class IndexComponent implements OnInit {
       this.nameSearched = "Martian";
       await this.clientAPI.getData().then(value => {
         let subscribedData = value.subscribe(value => {
-          this.gamesSearchResults = value;
+          this.gamesSearchResults = Object.values(value);
           // unsubscribed to data when collected
           if (this.gamesSearchResults) {
             subscribedData.unsubscribe();

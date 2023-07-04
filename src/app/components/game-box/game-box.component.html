@@ -1,6 +1,6 @@
-<div>
+<div id="gamebox-divcontainer">
   <div [routerLink]="['/gameview',gameID]" [queryParams]="{ id: gameID}" >
     <h3>{{ name }}</h3>
-    <img [src]="coverUrl" loading="lazy" alt="">
+    <img src={{checkCoverUrl(coverUrl)}} loading="lazy" alt="">
   </div>
 </div>

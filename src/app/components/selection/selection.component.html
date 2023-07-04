@@ -1,8 +1,24 @@
-<button (click)="showSelections()">Genres<!-- put svg image here --></button>
-<button (click)="filterSearch()">Filter</button>
-<div  *ngIf="isSelectionActive">
+<div id="filter-divcontainer">
+  <div id="filtergenre-btns-container">
+    <button id="genre-btn" (click)="showSelections()">Genres<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_79_12)">
+      <path d="M5 33.5L67.5 96.5" stroke="white" stroke-width="10"/>
+      <path d="M60 96.5L124 34" stroke="white" stroke-width="10"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_79_12">
+      <rect width="128" height="128" fill="white"/>
+      </clipPath>
+      </defs>
+      </svg>
+      </button>
+    <button id="filter-btn" (click)="filterSearch()">Filter</button>
+  </div>
+  <div id="genreoptions-container" *ngIf="isSelectionActive">
     <div *ngFor=" let genre of genres; let i = index">
         <label for={{genre.name}}>{{genre.name}}</label>
         <input checked={{isChecked(genre.id)}} (click)="selectID(genre.id)" type="checkbox" name={{genre.name}} id="">
     </div>
+  </div>
 </div>
+

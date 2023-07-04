@@ -1,0 +1,32 @@
+#genreoptions-container {
+  position:absolute;
+  display: inline-block;
+  width: 15em;
+  z-index: 5000;
+  background-color: #E76F51;
+}
+#genreoptions-container div {
+  padding: 0.2em;
+  display: inline-block;
+}
+#filter-divcontainer button {
+  border: 0px;
+  background-color: #E76F51;
+  color: white;
+  margin: 0.2em;
+  font-size: 0.5em;
+  font-weight: 600;
+  padding: 0.5em;
+}
+#genre-btn {
+  width: 60%;
+}
+#filter-btn {
+  width: 100% auto;
+}
+#filter-divcontainer svg {
+  padding-left: 0.5em;
+  transform: translateY(15%);
+  width: 8%;
+  height: auto;
+}

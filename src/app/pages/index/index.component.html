@@ -1,9 +1,13 @@
-<h1>Games</h1>
-<app-selection (selectedIDS)="handleSearchByGenre($event)"></app-selection>
-<app-search-bar (sendsearchName)="handleGameSearch($event)"  ></app-search-bar>
-<div>
-  <app-game-box *ngFor=" let games of gamesSearchResults"
-  [gameID]="games.id"
-  [name]="games.name"
-  [coverID]="games.cover"></app-game-box>
+<div id="homepage-divcontainer">
+  <div id="searchFilter-divcontainer">
+    <app-selection (selectedIDS)="handleSearchByGenre($event)"></app-selection>
+    <app-search-bar (sendsearchName)="handleGameSearch($event)"  ></app-search-bar>
+  </div>
+  <div id="gameboxes-divcontainer">
+    <app-game-box *ngFor=" let games of gamesSearchResults"
+    [gameID]="games.id"
+    [name]="games.name"
+    [coverID]="games.cover"></app-game-box>
+  </div>
 </div>
+

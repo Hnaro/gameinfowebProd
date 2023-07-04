@@ -1,3 +1,29 @@
+#searchBar-divContainer {
+  width: 50%;
+}
+#searchBynameSection-divContainer {
+  display: flex;
+}
+#searchBynameSection-divContainer input {
+  border: 0px;
+  width: 100% auto;
+  margin-right: 0.5em;
+  border-radius: 0em;
+}
+#searchBynameSection-divContainer input::placeholder {
+  color: rgb(185, 185, 185);
+  padding: 0.1em;
+  font-weight: 700;
+}
+#searchBynameSection-divContainer button {
+  background-color: #E76F51;
+  font-weight: 600;
+  height: 2.7em;
+  color: white;
+  margin-right: 1em;
+  border: 0px;
+  box-shadow: 0.1em 0.2em 0.3em 0.1em #a87042;
+}
 .error-style {
     color: red;
 }

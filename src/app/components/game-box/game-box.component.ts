@@ -12,12 +12,21 @@ export class GameBoxComponent implements OnInit {
   @Input() gameID: any;
   @Input() name: string = "";
   @Input() coverID: number = 0;
+  // if no cover use this instead
+  defaultImage: string = "../../../assets/nodataImage.png";
 
   genreIDs: number[] = [];
   coverUrl: any;
   cover: any;
   constructor(private clientAPI: WebBackendService) {}
-
+  testImage: string = "";
+  checkCoverUrl(url: string) {
+    if (url) {
+      return url;
+    } else {
+      return this.defaultImage;
+    }
+  }
   async setupData() {
     let results: any;
      await this.clientAPI.getGameCover(this.gameID).then(data => {

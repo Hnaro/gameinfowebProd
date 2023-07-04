@@ -1,0 +1,17 @@
+#searchFilter-divcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F4A261;
+  padding: 0.5em;
+  font-size: 1.5em;
+}
+#homepage-divcontainer {
+  width: 100% auto;
+  margin: 0;
+  padding: 0;
+}
+#gameboxes-divcontainer {
+  text-align: center;
+  z-index: 3;
+}

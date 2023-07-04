@@ -1,9 +1,9 @@
 <div id="searchBar-divContainer">
     <div id="searchBynameSection-divContainer">
+        <input type="text" [(ngModel)]="name" placeholder="Search a game">
         <div>
-            <input type="text" [(ngModel)]="name" placeholder="Search a name...">
+          <div *ngIf="noInput && !name"  [class.error-style]="true" #err  >{{ errMsg }}</div>
+          <button (click)="onClick()">Search</button>
         </div>
-        <div *ngIf="noInput && !name"  [class.error-style]="true" #err  >{{ errMsg }}</div>
-        <button (click)="onClick()">Search</button>
     </div>
 </div>
