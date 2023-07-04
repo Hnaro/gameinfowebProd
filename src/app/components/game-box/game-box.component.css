@@ -9,17 +9,19 @@
 }
 #gamebox-divcontainer img {
   image-rendering:pixelated;
-  image-rendering:crisp-edges;
-  object-fit: fill;
+  width: 100%;
+}
+#gamebox-divcontainer div {
+  background-color: #E76F51;
   width: 100%;
 }
 h3 {
-  padding: 0.5em;
-  background-color: #E76F51;
+  font-weight: 900;
   color: white;
   margin: 0 auto;
   text-align: center;
   font-size: 0.8em;
+  background-position: 2em;
 }
 div:hover {
     cursor: pointer;

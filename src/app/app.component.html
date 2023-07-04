@@ -1,6 +1,6 @@
 <div id="outer-divcontainer">
   <div id="nav-bar">
-    <div id="navbar-hamburgerIcon-divcontainer">
+    <div (click)="openSlideBar()" id="navbar-hamburgerIcon-divcontainer">
       <svg id="navbar-svg" width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="navBarIcon">
         <rect id="Rectangle 5" y="18.0126" width="29.0526" height="4.06737"/>
@@ -30,9 +30,6 @@
         </defs>
         </svg>
     </div>
-  </div>
-  <div id="outer-div-headerContainer">
-    <h1>Search Your Favorite Games</h1>
   </div>
   <router-outlet></router-outlet>
 </div>

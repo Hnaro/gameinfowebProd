@@ -11,7 +11,15 @@
   margin: 0;
   padding: 0;
 }
-#gameboxes-divcontainer {
-  text-align: center;
-  z-index: 3;
+#outer-div-headerContainer {
+  padding-top: 5em;
+  background: linear-gradient(90deg, #152931 40%, #2A9E90) ;
+}
+#outer-div-headerContainer h1 {
+  width: 100% auto;
+  text-align: left;
+  padding: 1.5em;
+  transform: translateX(-5%);
+  margin: 0;
+  font-size: 1.3em;
 }

@@ -1,18 +1,24 @@
+<div id="gameview-base-divcontainer">
+  <div id="gameview-banner-divcontainer">
 
-<h1>{{ name }}</h1>
-<div><img [src]="coverUrl" loading="lazy" alt="" srcset=""></div>
-<h5>Summary: </h5>
-<p>{{ description }}</p>
-<h5>Genres:</h5>
-<p *ngFor=" let genrename of genreNames">
-    {{genrename.name}}
-</p>
-<h5>Platforms:</h5>
-<p *ngFor=" let platformname of platformNames">
-    {{platformname.name}}
-</p>
-<h5>Websites:</h5>
-<p *ngFor=" let website of websites">
-    <a href={{website.url}}>{{website.url}}
-    </a>
-</p>
+  </div>
+  <h1>{{ name }}</h1>
+  <div><img [src]="coverUrl" loading="lazy" alt="" srcset=""></div>
+  <h5>Summary: </h5>
+  <p>{{ description }}</p>
+  <h5>Genres:</h5>
+
+
+  <p *ngFor=" let genrename of genreNames">
+      {{genrename.name}}
+  </p>
+  <h5>Platforms:</h5>
+  <p *ngFor=" let platformname of platformNames">
+      {{platformname.name}}
+  </p>
+  <h5>Websites:</h5>
+  <p *ngFor=" let website of websites">
+      <a href={{website.url}}>{{website.url}}
+      </a>
+  </p>
+</div>

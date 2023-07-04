@@ -16,6 +16,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { WebBackendService } from './services/web-backend.service';
 import { SearchService } from './services/search.service';
 import { SelectionComponent } from './components/selection/selection.component';
+import { SlidebarComponent } from './components/slidebar/slidebar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SelectionComponent } from './components/selection/selection.component';
     IndexComponent,
     GameViewComponent,
     SearchBarComponent,
-    SelectionComponent
+    SelectionComponent,
+    SlidebarComponent
   ],
   imports: [
     BrowserModule,
