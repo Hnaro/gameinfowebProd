@@ -1,0 +1,15 @@
+#footer-container {
+    background-color: #264653;
+    width: 100%;
+    height: 5em;
+    margin-top: -3em;
+    z-index: 1000;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+}
+
+#footer-container h4 {
+    padding: 1em;
+    font-size: 0.7em;
+}

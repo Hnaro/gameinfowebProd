@@ -16,9 +16,17 @@ export class GameViewComponent implements OnInit {
   description: any;
   websites: any[] = [];
 
+  defaultImage: string = "../../../assets/nodataImage.png";
+
   genreNames: any[] = [];
   constructor(private route: ActivatedRoute,private clientAPI: WebBackendService){}
-
+  checkCoverUrl(url: string) {
+    if (url) {
+      return url;
+    } else {
+      return this.defaultImage;
+    }
+  }
   async setUpGameViewData() {
     let querySubs = await this.route.queryParamMap.subscribe(value => {
       this.id = value.get("id");
