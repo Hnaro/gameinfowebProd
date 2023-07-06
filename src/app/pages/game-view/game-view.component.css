@@ -1,5 +1,7 @@
 #gameview-base-divcontainer {
     color: white;
+    height:min-content ;
+    padding-bottom: 7em;
     background-color: rgb(6, 28, 37);
 }
 #gameview-banner-divcontainer {

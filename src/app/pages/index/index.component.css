@@ -11,6 +11,11 @@
   margin: 0;
   padding: 0;
 }
+#gameboxes-divcontainer {
+  padding-bottom: 4em;
+  text-align: center;
+  margin: 0 auto;
+}
 #outer-div-headerContainer {
   padding-top: 5em;
   background: linear-gradient(90deg, #152931 40%, #2A9E90) ;
