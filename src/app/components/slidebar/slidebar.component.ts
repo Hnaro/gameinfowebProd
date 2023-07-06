@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-slidebar',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./slidebar.component.css']
 })
 export class SlidebarComponent {
-
+  @Output() updateSlidebarStatus = new EventEmitter();
+  isActive: boolean = false;
+  closeSlidebar() {
+    this.updateSlidebarStatus.emit(false);
+  }
 }

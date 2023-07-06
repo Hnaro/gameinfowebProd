@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { timeout } from 'rxjs';
 import { WebBackendService } from 'src/app/services/web-backend.service';
 
@@ -14,6 +14,7 @@ export class GameBoxComponent implements OnInit {
   @Input() coverID: number = 0;
   // if no cover use this instead
   defaultImage: string = "../../../assets/nodataImage.png";
+  @Output() homestatus = new EventEmitter();
 
   genreIDs: number[] = [];
   coverUrl: any;
@@ -45,5 +46,7 @@ export class GameBoxComponent implements OnInit {
       this.setupData();
     }, 1000)
   }
-
+  updateHomeStatus() {
+    this.homestatus.emit(false);
+  }
 }

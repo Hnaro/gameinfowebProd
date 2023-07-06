@@ -32,7 +32,14 @@
   justify-content: flex-end;
   width: 50%;
 }
+#main-outer-divcontainer {
+  display: flex;
+  position: sticky;
+  overflow: hidden;
+}
 #outer-divcontainer {
+  z-index: 5;
+  box-shadow: -0.2em 0em 0.5em 0em #060a0c;
   width: 100%;
   margin: 0;
   padding: 0;

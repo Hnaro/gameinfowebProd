@@ -7,9 +7,18 @@ import { SearchService } from './services/search.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private searchService: SearchService) {
+  isSlideBarNotActive: boolean = false;
+  constructor(private searchService: SearchService) { }
+
+  handleSlidebarStatus(e: any) {
+    this.isSlideBarNotActive = e;
   }
   openSlideBar() {
+    if (this.isSlideBarNotActive) {
+      this.isSlideBarNotActive = false;
+      return;
+    }
+    this.isSlideBarNotActive = true;
     // use boolean for opening and closing the slide bar
     // create another component for slide bar make it fixed or sticky position and absolute
   }

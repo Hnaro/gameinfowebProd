@@ -24,7 +24,7 @@
     position: sticky;
     transform: translateX(11%);
     z-index: 6;
-    width: 40%;
+    width: 35%;
     height: 6em;
     border-radius: 100%;
     border: 0.3em solid #1B3D38;
@@ -46,7 +46,7 @@
     margin: 0em 2em 0em 2em;
     padding: 0em 1em 0em 1em;
 }
-#content-container section { 
+#content-container section {
     margin-bottom: 3em;
 }
 #websites-sectionContainer a {

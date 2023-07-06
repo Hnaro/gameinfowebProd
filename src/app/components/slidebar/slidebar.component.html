@@ -1,1 +1,6 @@
-<p>slidebar works!</p>
+<div id="slidebar-container">
+  <div id="btn-container">
+    <button [class.active]="isActive" (click)="closeSlidebar()" routerLink="/">Home</button>
+    <button>About</button>
+  </div>
+</div>
