@@ -24,3 +24,28 @@ button {
   color: #2A9E90;
   font-weight: 900;
 }
+
+@media screen and (min-width: 900px) {
+  #slidebar-container {
+    position:absolute;
+    text-align: right;
+    width: 100% auto;
+    right: 0;
+  }
+  #btn-container {
+   display: flex;
+    position:inherit;
+    margin-top:0;
+    padding-right: 0em;
+    align-items: flex-end;
+  }
+  button {
+    text-align: center;
+    background: none;
+    color: white;
+    font-weight: 700;
+    padding-bottom: 0;
+    background-color: none;
+    border: 0;
+  }
+}

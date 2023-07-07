@@ -2,7 +2,11 @@
   <app-slidebar (updateSlidebarStatus)="handleSlidebarStatus($event)" *ngIf="isSlideBarNotActive"></app-slidebar>
   <div id="outer-divcontainer">
     <div id="nav-bar">
-      <div id="navbar-hamburgerIcon-divcontainer">
+      <div class="hide-desktop-view"><h3>Search Your <br> Favorite Games</h3></div>
+      <div class="hide-desktop-view">
+        <app-slidebar id="nav-section-container"></app-slidebar>
+      </div>
+      <div class="hide-mobiletablet-view" id="navbar-hamburgerIcon-divcontainer">
         <svg (click)="openSlideBar()" id="navbar-svg" width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="navBarIcon">
           <rect id="Rectangle 5" y="18.0126" width="29.0526" height="4.06737"/>
@@ -10,10 +14,9 @@
           <rect id="Rectangle 7" width="29.0526" height="4.06737"/>
           </g>
           </svg>
-
       </div>
       <div routerLink="/"  id="gameinfologo-divcontainer">
-        <h1>GameInfo</h1>
+        <h1 >GameInfo</h1>
         <svg viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M28.8169 0L18.5915 9.78814L9.91549 7.11864L0 27.5847L25.4085 22.5424L23.2394 35L44 27.5847L30.3662 14.2373L39.9718 3.85593L28.8169 0Z" fill="#152830"/>
           <g filter="url(#filter0_d_67_2)">
