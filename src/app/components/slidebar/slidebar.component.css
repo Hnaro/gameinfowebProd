@@ -1,21 +1,23 @@
 #slidebar-container {
-  position: static;
-  display: flex;
-  display: inline;
+  position:static;
+  width: 15em;
 }
 #btn-container {
+  position:fixed;
+  width: 15em;
   margin-top:7em;
 }
 button {
+  text-align: center;
   margin-top: 2em;
   border: 0;
+  width: 100%;
   background: none;
   color: white;
   padding-bottom: 0.5em;
   background-color: none;
   font-size: 1.2em;
   border-bottom: 0.2em solid #1c323b;
-  width: 12em;
 }
 
 .active {
