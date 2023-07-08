@@ -30,3 +30,9 @@
   width: 8%;
   height: auto;
 }
+
+@media screen and (min-width: 600px) {
+  #filter-divcontainer svg {
+    width: 5%;
+  }
+}
