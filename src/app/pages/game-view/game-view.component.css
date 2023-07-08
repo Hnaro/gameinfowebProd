@@ -4,6 +4,9 @@
     padding-bottom: 7em;
     background-color: rgb(6, 28, 37);
 }
+.hide-desktopview {
+  display: none;
+}
 #gameview-banner-divcontainer {
     width: 100% auto;
     height: 13em;
@@ -63,4 +66,128 @@ h3 {
     color: #61a7c2;
     margin-bottom: -1em;
     padding: 0;
+}
+
+@media screen and (min-width: 520px) {
+  #gamesubheader-divcontainer img {
+    transform: translateX(11%);
+    margin-left: 2em;
+    width: 20%;
+    height: 7em;
+    border-radius: 0;
+    border: 0;
+    box-shadow: 0em 0em 0.2em 0.1em #000000;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #gamesubheader-divcontainer img {
+    transform: translateX(11%);
+    width:20%;
+    height: 8em;
+    box-shadow: 0em 0em 0.2em 0.1em #000000;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hide-mobileview {
+    display: none;
+  }
+  #sites-style-desktop-container {
+    background-color: #9D3F27;
+    color: white;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  #website-urlcontainer {
+    overflow: scroll;
+  }
+  #website-urlcontainer p {
+    display: inherit;
+  }
+  #website-urlcontainer p span a {
+    text-decoration: none;
+    color: white;
+    padding: 1em;
+  }
+  #content-container {
+    transform: 0;
+    width: 40%;
+    text-align: left;
+    margin: 0em 2em 0em 2em;
+    padding: 0em 1em 0em 1em;
+    margin: 0 auto;
+}
+  #summary-sectionContainer p, #platform-sectionContainer p {
+    font-size: 1.2em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  #website-urlcontainer {
+    margin-top: 7em;
+    width: 25%;
+    height: 17em;
+    margin-right: 5em;
+    float: right;
+    background-color: #E76F51;
+    box-shadow: 0em 0.2em 0.5em 0em rgb(2, 2, 2);
+  }
+  #gamesubheader-divcontainer p, #gamesubheader-divcontainer h3, #gamesubheader-divcontainer h2 {
+    display: inherit;
+  }
+  #gamesubheader-divcontainer h2 {
+    font-size: 4em;
+    position:absolute;
+    z-index: 500;
+    transform: translateY(-2em);
+  }
+
+  #gamesubheader-divcontainer h1 {
+    font-size: 4em;
+    transform: translateY(-2em);
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  #gamesubheader-divcontainer h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 3em;
+  }
+  #gamesubheader-divcontainer p {
+    font-size: 3em;
+    font-weight: bold;
+  }
+  #gamesubheader-divcontainer img {
+    margin-left: 20em;
+    transform: translateX(11%);
+    width:15%;
+    height: 8em;
+    box-shadow: 0em 0em 0.2em 0.1em #000000;
+  }
+  #gameview-banner-divcontainer {
+    width: 100% auto;
+    height: 30em;
+    background: linear-gradient(140deg, #E76F51 40% ,#2A9E90) ;
+  }
+  #gamesubheader-divcontainer div {
+    margin-top: 2.3em;
+    font-size: 0.5em;
+    padding-left: 4em;
+    color: white;
+    width: 100%;
+    height: 12em;
+    z-index: 5;
+    background: linear-gradient(90deg, #152830 60%,#2A9E90);
+    box-shadow: 0em 0.5em 0.5em 0em #041218;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #gamesubheader-divcontainer img {
+    transform: translateX(11%);
+    width:12%;
+    height: 10em;
+    box-shadow: 0em 0em 0.2em 0.1em #000000;
+  }
 }

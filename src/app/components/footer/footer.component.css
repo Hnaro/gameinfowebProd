@@ -6,9 +6,11 @@
     text-align: center;
     position: sticky;
     margin-top: -3em;
+    clear: both;
 }
 
 #footer-container h4 {
+    clear: both;
     padding: 1em;
     font-size: 0.7em;
 }

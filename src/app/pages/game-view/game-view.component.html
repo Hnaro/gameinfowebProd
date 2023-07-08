@@ -1,13 +1,28 @@
 <div id="gameview-base-divcontainer">
   <div id="gameview-banner-divcontainer">
+    <div id="website-urlcontainer">
+      <h3 id="sites-style-desktop-container">Websites</h3>
+      <p class="hide-desktopview" *ngFor=" let website of websites; let i = index">
+        <span><a href={{website.url}}>{{website.url}}</a></span>
+      </p>
+    </div>
     <!-- <img [src]="coverUrl" loading="lazy" alt="" srcset=""> -->
   </div>
   <div id="gamesubheader-divcontainer">
     <img src={{checkCoverUrl(coverUrl)}} loading="lazy" alt="" srcset="">
-    <div><h1>{{ name }}</h1></div>
+    <div>
+      <h2 class="hide-desktopview">{{name}}</h2>
+      <h3 class="hide-desktopview">Genres: </h3>
+      <p class="hide-desktopview">
+        <!-- if no data use the default data -->
+        <span *ngFor=" let genrename of genreNames">{{genrename.name ? genrename.name+", "  : "Action, Sci-fi, Racing"}}</span>
+      </p>
+      <h1 class="hide-mobileview" >{{ name }}</h1>
+      <p></p>
+    </div>
   </div>
   <div id="content-container">
-    <section id="genre-sectionContainer">
+    <section class="hide-mobileview" id="genre-sectionContainer">
         <h3>Genres:</h3>
         <p>
           <!-- if no data use the default data -->
@@ -24,7 +39,7 @@
         <h3>Summary: </h3>
         <p>{{ description }}</p>
     </section>
-    <section id="websites-sectionContainer">
+    <section class="hide-mobileview" id="websites-sectionContainer">
         <h3>Websites:</h3>
         <p *ngFor=" let website of websites; let i = index">
             <span><a href={{website.url}}>{{website.url}}</a></span>
