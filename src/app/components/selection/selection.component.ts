@@ -10,10 +10,11 @@ import { WebBackendService } from 'src/app/services/web-backend.service';
 export class SelectionComponent implements OnInit {
   @Output() selectedIDS = new EventEmitter;
 
-  isSelectionActive: boolean = false; 
-  
+  isSelectionActive: boolean = false;
+
   selectedids: number[] = [];
   genres: any[];
+  firstClicked: boolean = true;
   constructor(private clientAPI: WebBackendService, private searchService: SearchService) {
     this.genres = [];
     //searchService.setSearchedGenres = [{id: 1, name:"test1"},{id: 2, name:"test2"}]
@@ -37,7 +38,12 @@ export class SelectionComponent implements OnInit {
   // each button for selecting ids will have this
   selectID(ids: number){
     //  store selectedIds
-    this.selectedids.push(ids);
+    if (this.firstClicked) {
+      this.firstClicked = false;
+      this.selectedids.push(ids);
+      return
+    }
+    this.firstClicked = true;
   }
   filterSearch() {
     //console.log(this.selectedids)
