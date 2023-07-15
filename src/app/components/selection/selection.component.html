@@ -17,7 +17,7 @@
   <div id="genreoptions-container" *ngIf="isSelectionActive">
     <div *ngFor=" let genre of genres; let i = index">
         <label for={{genre.name}}>{{genre.name}}</label>
-        <input checked={{isChecked(genre.id)}} (click)="selectID(genre.id)" type="checkbox" name={{genre.name}} id="">
+        <input checked={{firstClicked ? isChecked(genre.id) : false}} (click)="selectID(genre.id)" type="checkbox" name={{genre.name}} id="">
     </div>
   </div>
 </div>
