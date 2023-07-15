@@ -18,6 +18,7 @@ import { SearchService } from './services/search.service';
 import { SelectionComponent } from './components/selection/selection.component';
 import { SlidebarComponent } from './components/slidebar/slidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SearchBarComponent,
     SelectionComponent,
     SlidebarComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
