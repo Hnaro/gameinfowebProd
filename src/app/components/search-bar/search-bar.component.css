@@ -24,6 +24,11 @@
   border: 0px;
   box-shadow: 0.1em 0.2em 0.3em 0.1em #a87042;
 }
+#searchBynameSection-divContainer button:hover {
+  cursor: pointer;
+  background-color: #fa7f60;
+  transition: 0.3s;
+}
 .error-style {
     color: red;
 }

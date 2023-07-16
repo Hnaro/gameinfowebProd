@@ -31,6 +31,12 @@
   height: auto;
 }
 
+#filter-divcontainer button:hover {
+  cursor: pointer;
+  background-color: #fa7f60;
+  transition: 0.3s;
+}
+
 @media screen and (min-width: 600px) {
   #filter-divcontainer svg {
     width: 5%;
