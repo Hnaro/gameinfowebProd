@@ -1,6 +1,6 @@
 <div id="slidebar-container">
   <div id="btn-container">
-    <button (click)="closeSlidebar()" routerLink="/">Home</button>
-    <button   routerLink="about">About</button>
+    <button (click)="closeSlidebar()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</button>
+    <button  routerLinkActive="active"  routerLink="about">About</button>
   </div>
 </div>

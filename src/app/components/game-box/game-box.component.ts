@@ -23,7 +23,8 @@ export class GameBoxComponent implements OnInit {
   testImage: string = "";
   checkCoverUrl(url: string) {
     if (url) {
-      return url;
+      console.log("https:"+url)
+      return "https:"+url;
     } else {
       return this.defaultImage;
     }

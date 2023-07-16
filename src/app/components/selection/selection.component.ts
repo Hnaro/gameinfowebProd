@@ -66,4 +66,10 @@ export class SelectionComponent implements OnInit {
     }
     this.isSelectionActive = true;
   }
+  showSelectionsMouseOver() {
+    this.isSelectionActive = true;
+  }
+  hideSelectionsMouseOut() {
+    this.isSelectionActive = false;
+  }
 }

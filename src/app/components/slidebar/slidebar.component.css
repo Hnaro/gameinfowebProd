@@ -21,16 +21,6 @@ button {
   border-bottom: 0.2em solid #1c323b;
 }
 
-.active {
-  color: #2A9E90;
-  font-weight: 900;
-}
-
-button:hover {
-  border-bottom: 0.2em solid #2A9E90;
-  transition: 0.3s;
-}
-
 @media screen and (min-width: 900px) {
   #slidebar-container {
     position:absolute;
@@ -42,16 +32,28 @@ button:hover {
    display: flex;
     position:inherit;
     margin-top:0;
-    transform: translateX(-30%);
+    transform: translateX(-15%);
     align-items: flex-end;
   }
   button {
     text-align: center;
     background: none;
     color: white;
+    margin-left: 1em;
+    margin-right: 1em;
     font-weight: 700;
     padding-bottom: 0;
     background-color: none;
     border: 0;
+  }
+  .active {
+    border-bottom: 0.2em solid #23d8c3;
+    font-weight: 900;
+  }
+
+  button:hover {
+    border-bottom: 0.2em solid #23d8c3;
+    font-weight: 900;
+    transition: 0.2s;
   }
 }
