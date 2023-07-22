@@ -21,6 +21,10 @@
     padding-bottom: 1em;
     font-size: 0.7em;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 @media screen and (min-width: 700px) {
   #footer-container img {
     width: 2em;
