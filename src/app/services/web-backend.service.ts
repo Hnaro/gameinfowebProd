@@ -6,11 +6,10 @@ import { environment as env } from '../../.environment/environment';
   providedIn: 'root'
 })
 export class WebBackendService {
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
   // change this for new url if deployed
-  defaultURL = "http://10.0.0.145:7096/api";
-  defaultGetDataUrl = "http://10.0.0.145:7096/"
+  defaultURL = "http://52.60.90.150:7096/api";
+  defaultGetDataUrl = "http://52.60.90.150:7096/"
 
   deployedDefaultURL = env.deployedBackendURL+"api";
   deployedGetDataUrl = env.deployedBackendURL;
